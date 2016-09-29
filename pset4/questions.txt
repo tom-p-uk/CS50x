@@ -1,0 +1,53 @@
+0.  BMP - 32 bit color (over 4 billion)
+	GIF - 8 bits (256)
+	JPEG - 24 bit (16 million)
+	PNG - 24 bit (16 million)
+	
+1.  GIF files support animation.
+    
+2.  Lossy compression loses/discards data during compression.
+    Lossless compression can be reversed, and discards no data.
+    
+3.  JPEG.
+    
+4.  The address of the file is removed, but the data itself is not deleted.
+
+5.  Secure delete replaces the files information with all zeroes, which is a
+	safer option.
+	
+6.  stdint is a header file that contains a set of defined, fixed width	integers.
+
+7.  It means the program will always be portable. 
+	The variable widths will not change depending on the computer being used.
+
+8.  BYTE - 1 byte
+	DWORD - 4 bytes
+	LONG - 4 bytes
+	WORD - 2 bytes
+
+9.  The first two bytes of a bitmap bust contain the ASCII characters 'B' and 'P'.
+
+10. bisize stores the size of the image itself, whereas bfsize stores the size of the image,
+	as well as other data, such as headers.
+
+11. If the bitmap height is positive the file will be a bottom up DIB 
+	where the bottom row of the image will be the first row of the file.
+	The opposite is the case when the bitmap height is positive.
+	
+12. biBitCount
+
+13. If fopen cannot find the file to open, it will return NULL.
+
+14. Because we want to read one pixel at a time, which in the cae of resize,
+	will be a single struct file.
+	
+15. Each row must be a multiple of 4 bytes. If not, padding is added.
+	3 pixels x 3 bytes for each pixel = 9 bytes per row. 3 bytes of padding
+	must be added.
+	
+16. fseek allows you to move to a designated point in a file.
+
+17. The final argument passed to fseek should be the location in the file 
+	from which you would like to move. SEEK_CUR is the current position in the file.
+	
+18. Rick Astley!
