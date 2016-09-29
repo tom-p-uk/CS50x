@@ -1,0 +1,60 @@
+0. What is pneumonoultramicroscopicsilicovolcanoconiosis?
+
+According to the Oxford English Dictionary, it is "an artificial long word said to mean a lung disease caused by 
+inhaling very fine ash and sand dust." It is also the longest word in any English dictionary, which provides our 
+code with an upper limit for word length.
+
+1. According to its man page, what does getrusage do?
+
+Returns resource usage information in the form of a struct.
+
+2. Per that same man page, how many members are in a variable of type struct rusage?
+
+The stuct mentioned in the answer to the previous question contains 16 members.
+
+3. Why do you think we pass before and after by reference (instead of by value) to calculate, even though we’re not changing their contents?
+
+Because if we don't pass in the addresses of the structs, the function will have to make copies of them, which
+will end up increasing run time.
+
+4. Explain as precisely as possible, in a paragraph or more, how main goes about reading words from a file. In other words, convince us that you indeed understand how that function’s for loop works.
+
+A character from the text is stored in the variable C until the end of the file. If that character is alphabetical
+or an apostrophe it is appended to our word array. However, if the word is longer than our defined top limit LENGTH,
+a while loop skips along to the end of the word and then resets the array index counter to 0. Similarly, if a word 
+contains a number, we skip through until the end of the word and reset the index counter. If the char is neither 
+alphabetical, numerical or an apostrophe, then we must have come to the end of the word (provided that index > 0)
+and we terminate the current word by appending a terminating 0 to the array, then updating the word counter.
+
+The program then  checks if the word's spelling is correct, calculating benchmarks in the process, and both prints
+the word and updates the misspellings counter if the word is spelt incorrectly. It then repeats the process.
+
+5. Why do you think we used fgetc to read each word’s characters one at a time rather than use fscanf with a format string like "%s" to read whole words at a time? Put another way, what problems might arise by relying on fscanf alone?
+
+fscanf simply reads until it hits white space, meaning that punctuation or other unwanted characters get loaded in to
+the word array, along with the word. By using fgetc, however, we can check each word character by character, ultimately 
+ignoring invalid characters, and also ignoring words that contain invalid characters mid-word.
+
+6. Why do you think we declared the parameters for check and load as const?
+
+Doing so means that both the pointers and the strings they point to can not be modified.
+
+7. What data structure(s) did you use to implement your spell-checker? Be sure not to leave your answer at just "hash table," "trie," or the like. Expound on what’s inside each of your "nodes."
+
+I used a hash table. Although I originally intended to implement a trie, after reading about, hash tables are a much
+more common data structure, so I thought it would be a good opportunity to practise something I might end up doing
+quite often in the future.
+
+8. How slow was your code the first time you got it working correctly?
+
+I used a really good hash function, so my code ran at a comparable speed to the staff's code from the outset.
+
+9. What kinds of changes, if any, did you make to your code in order to improve its performance?
+
+I was happy with the speed of my code from the start, so didn't do too much in the way of optimisation. I did however,
+have to spend a long time working through my code and using valgrind to get rid of all memory memory leaks.
+
+10. Do you feel that your code has any bottlenecks that you were not able to chip away at?
+
+The biggest one is probably having to allocate memory for each node. This needs to be done for each word in the
+dictionary, and is something that can't really be chipped away at.
