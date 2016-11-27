@@ -17,7 +17,7 @@ My solutions to Harvard CS50x's problem sets
 ###PSET3
 
 - **Find**: C program that incorporates binary search and bubble sort algorithms.
-- **Fiften**: C game played in terminal where user has to arrange a board of tiles in ascending numerical order.
+- **Fifteen**: C game played in terminal where user has to arrange a board of tiles in ascending numerical order.
 
 ###PSET4
 
