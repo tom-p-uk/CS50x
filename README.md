@@ -38,4 +38,4 @@ My solutions to Harvard CS50x's problem sets
 
 ###PSET8
 
-- **Finance**: Application that uses PHP, JavaScript and MySQL that creates Google Maps markers showing news stories specific to areas of the map.
+- **Mashup**: Application that uses PHP, JavaScript and MySQL that creates Google Maps markers showing news stories specific to areas of the map.
