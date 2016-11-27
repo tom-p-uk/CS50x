@@ -26,7 +26,7 @@ My solutions to Harvard CS50x's problem sets
 
 ###PSET5
 
-- **Mispellings**: Spell checking program in C that loads a dictionary into memory using a hash table, checks a given text for mispellings, outputs them, and then unloads the dictionary from memory.
+- **Mispellings**: Spell checking program in C that loads a dictionary into memory using a hash table, checks a given text for mispellings, outputs them, and then unloads the dictionary from memory. Entire process should be as time inexpensive as possible.
 
 ###PSET6
 
